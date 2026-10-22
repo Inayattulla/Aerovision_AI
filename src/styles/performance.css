@@ -1,0 +1,703 @@
+/* =========================================
+   PERFORMANCE PAGE
+   ========================================= */
+
+.performance-page {
+    min-height: calc(100vh - 72px);
+
+    background:
+        radial-gradient(
+            circle at 80% 5%,
+            rgba(56, 189, 248, 0.045),
+            transparent 30%
+        ),
+        var(--bg-primary);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.performance-header {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 55px 50px 30px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.performance-header h1 {
+    margin-top: 9px;
+
+    font-size: clamp(38px, 5vw, 55px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+.performance-header p {
+    max-width: 650px;
+
+    margin-top: 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+.model-badge {
+    min-width: 190px;
+
+    padding: 13px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #c084fc;
+
+    background:
+        rgba(192, 132, 252, 0.05);
+
+    border: 1px solid
+        rgba(192, 132, 252, 0.17);
+
+    border-radius: 9px;
+}
+
+.model-badge > svg {
+    flex-shrink: 0;
+}
+
+.model-badge div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.model-badge strong {
+    color: var(--text-primary);
+
+    font-size: 12px;
+}
+
+.model-badge span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.performance-container {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 0 50px 90px;
+}
+
+
+/* =========================================
+   METRICS
+   ========================================= */
+
+.performance-metrics {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.metric-card {
+    min-height: 170px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition: 0.2s ease;
+}
+
+.metric-card:hover {
+    border-color: #2b3b4d;
+
+    transform: translateY(-2px);
+}
+
+.metric-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 9px;
+}
+
+.metric-icon.primary {
+    color: var(--primary);
+
+    background:
+        rgba(56, 189, 248, 0.09);
+}
+
+.metric-icon.success {
+    color: var(--success);
+
+    background:
+        rgba(34, 197, 94, 0.09);
+}
+
+.metric-icon.warning {
+    color: var(--warning);
+
+    background:
+        rgba(245, 158, 11, 0.09);
+}
+
+.metric-icon.purple {
+    color: #c084fc;
+
+    background:
+        rgba(192, 132, 252, 0.09);
+}
+
+.metric-label {
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    margin-top: 5px;
+
+    font-size: 28px;
+
+    line-height: 1.1;
+}
+
+.metric-description {
+    margin-top: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   SECONDARY METRICS
+   ========================================= */
+
+.secondary-metrics {
+    margin-top: 18px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.f1-card,
+.evaluation-card {
+    min-height: 235px;
+
+    padding: 22px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+}
+
+.secondary-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.secondary-card-header > div > span {
+    color: var(--primary);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.secondary-card-header h2 {
+    margin-top: 4px;
+
+    font-size: 17px;
+}
+
+.secondary-card-header > svg {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   F1
+   ========================================= */
+
+.f1-content {
+    margin-top: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.f1-circle {
+    width: 125px;
+    height: 125px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--primary) 0deg 327deg,
+            #1d2a36 327deg 360deg
+        );
+
+    position: relative;
+}
+
+.f1-circle::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    background: var(--bg-card);
+
+    border-radius: 50%;
+}
+
+.f1-circle div {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.f1-circle strong {
+    font-size: 25px;
+}
+
+.f1-circle span {
+    margin-top: 2px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.f1-description {
+    max-width: 330px;
+}
+
+.f1-description p {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.f1-equation {
+    margin-top: 14px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    color: var(--text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    border-radius: 7px;
+
+    font-size: 9px;
+}
+
+.f1-equation strong {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   EVALUATION
+   ========================================= */
+
+.ready-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--success);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 9px rgba(34, 197, 94, 0.8);
+}
+
+.evaluation-list {
+    margin-top: 17px;
+
+    border-top: 1px solid var(--border);
+}
+
+.evaluation-item {
+    min-height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 11px;
+}
+
+.evaluation-item span {
+    color: var(--text-muted);
+}
+
+.evaluation-item strong {
+    color: var(--text-secondary);
+
+    font-size: 10px;
+}
+
+.evaluation-item strong:first-letter {
+    color: var(--success);
+}
+
+
+/* =========================================
+   PERFORMANCE CARD
+   ========================================= */
+
+.performance-card {
+    margin-top: 18px;
+
+    padding: 22px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+}
+
+.performance-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.performance-card-header > div:first-child > span {
+    color: var(--primary);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.performance-card-header h2 {
+    margin-top: 4px;
+
+    font-size: 17px;
+}
+
+.performance-chart {
+    width: 100%;
+    height: 350px;
+
+    margin-top: 15px;
+}
+
+.class-performance-chart {
+    width: 100%;
+    height: 330px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   CHART LEGEND
+   ========================================= */
+
+.chart-legend-info {
+    display: flex;
+
+    gap: 15px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.chart-legend-info span {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.legend {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.legend.precision {
+    background: var(--primary);
+}
+
+.legend.recall {
+    background: var(--success);
+}
+
+.legend.map {
+    background: var(--warning);
+}
+
+
+/* =========================================
+   MODEL INFORMATION
+   ========================================= */
+
+.model-information {
+    margin-top: 18px;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(56, 189, 248, 0.045),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+}
+
+.model-info-title {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.model-info-title > svg {
+    color: var(--primary);
+}
+
+.model-info-title span {
+    color: var(--primary);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+.model-info-title h2 {
+    margin-top: 3px;
+
+    font-size: 19px;
+}
+
+.model-info-grid {
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.info-item {
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+.info-item-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+
+    background:
+        rgba(56, 189, 248, 0.07);
+
+    border-radius: 7px;
+}
+
+.info-item div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.info-item span {
+    color: var(--text-muted);
+
+    font-size: 8px;
+}
+
+.info-item strong {
+    color: var(--text-secondary);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .performance-metrics {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .model-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .performance-header {
+        padding: 45px 20px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .performance-container {
+        padding: 0 20px 70px;
+    }
+
+    .model-badge {
+        width: 100%;
+    }
+
+    .secondary-metrics {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .performance-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .performance-card-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .chart-legend-info {
+        flex-wrap: wrap;
+    }
+
+    .f1-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .model-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
